@@ -1,0 +1,8 @@
+{
+	"state": "HI",
+	"furthest_date": "2011-01-01",
+	"sunlight_api": null,
+	"redis_uri": null,
+	"mongo_uri": null,
+	"query": null
+}

@@ -1,0 +1,23 @@
+OpenStates API Scraper, made to work with but not exclusivly Heroku.com
+
+You'll need to set the environment variables before running the main application (worker.js) if you are using Heroku. If you're not using Heroku skip down.
+
+MONGOHQ_URL = The Mongodb:// uri to the database backend
+REDISTOGO_URL = A redis://something:PASSWORD@HOST:PORT/ uri to the redis backend
+SUNLIGHT_API_KEY: The API Key for the sunlight open states api, <http://znt.me/16BE4OM> for sign-up
+
+The Procfile just needs one worker with the "worker" process set to "node worker.js"
+
+* If you are not using Heroku * just fill the config.json with the variables instead
+
+mongo_uri = The Mongodb:// uri to the database backend
+redis_uri = A redis://something:PASSWORD@HOST:PORT/ uri to the redis backend
+sunlight_api = The API Key for the sunlight open states api, <http://znt.me/16BE4OM> for sign-up
+
+Additionally the state and furthest dated search point can be set in config.json.
+
+* Exporting *
+
+In the export directory a couple of PHP files are available to assist in exporting the data to csv files. Bills.csv compiles the bills, votes the votes in each bill and actions the actions in each bill. Fully compiled CSV's are available in the directory as well. 
+
+The votes.json, bills.json, and actions.json contain the queries that will be ran to find the records in the given CSV set, if set to an empty JSON object "{}" it will search for all records.
